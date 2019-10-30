@@ -3,8 +3,8 @@ class Delunay_Triangulation {
         // Create the super triangle
         this.super_triangle = new TriangleMesh();
         const p1 = new Point(0, HEIGHT);
-        const p2 = new Point(WIDTH, HEIGHT);
-        const p3 = new Point(WIDTH / 2, 0);
+        const p2 = new Point(HEIGHT / Math.tan(toRadian(45)) + WIDTH, HEIGHT);
+        const p3 = new Point(0, Math.tan(toRadian(45)) * WIDTH * -1);
         this.super_triangle.createFromPoints(p1, p2, p3);
         this.super_triangle.draw();
     }
