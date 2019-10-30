@@ -222,6 +222,7 @@ class TriangleMesh {
         const circumCenter = this.CircumcircleCenterPoint();
         const radius = this.CircumcircleRadius();
 
+        // Ako je udaljenost od tocke i sredista opisane kruznice veća od radijusa onda je tocka izvan kruznice
         return Math.sqrt(Math.pow(point.x - circumCenter.x, 2) + Math.pow(point.y - circumCenter.y, 2)) <= radius;
     }
 
