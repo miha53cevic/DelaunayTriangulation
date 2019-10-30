@@ -16,7 +16,7 @@ window.onload = () => {
         
         let triangles = triangulation.RunAlgorithm(points);
         for (let triangle of triangles) {
-            triangle.draw();
+            triangle.drawFill('cyan', true);
             //triangle.drawCircumcircle();
         }
 
