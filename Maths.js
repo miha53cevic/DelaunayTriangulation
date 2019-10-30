@@ -252,14 +252,36 @@ class TriangleMesh {
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));
     }
 
-    draw(color = 'black') {
-        line(this.A.x, this.A.y, this.B.x, this.B.y, color);
-        line(this.B.x, this.B.y, this.C.x, this.C.y, color);
-        line(this.C.x, this.C.y, this.A.x, this.A.y, color);
+    draw(colour = 'black') {
+        line(this.A.x, this.A.y, this.B.x, this.B.y, colour);
+        line(this.B.x, this.B.y, this.C.x, this.C.y, colour);
+        line(this.C.x, this.C.y, this.A.x, this.A.y, colour);
 
         drawFillRect(this.A.x - 2.5, this.A.y - 2.5, 5, 5, 'green');
         drawFillRect(this.B.x - 2.5, this.B.y - 2.5, 5, 5, 'green');
         drawFillRect(this.C.x - 2.5, this.C.y - 2.5, 5, 5, 'green');
+    }
+
+    drawFill(colour = 'black', enableStroke = false, strokeColour = 'white', dotColour = 'green') {
+        ctx.beginPath();
+        ctx.moveTo(this.A.x, this.A.y);
+        ctx.lineTo(this.B.x, this.B.y);
+        ctx.lineTo(this.C.x, this.C.y);
+        ctx.closePath();
+
+        ctx.lineJoin = 'round';
+
+        ctx.fillStyle = colour;
+        ctx.fill();
+        
+        if (enableStroke) {
+            ctx.strokeStyle = strokeColour;
+            ctx.stroke();
+        }
+
+        drawFillRect(this.A.x - 2.5, this.A.y - 2.5, 5, 5, dotColour);
+        drawFillRect(this.B.x - 2.5, this.B.y - 2.5, 5, 5, dotColour);
+        drawFillRect(this.C.x - 2.5, this.C.y - 2.5, 5, 5, dotColour);
     }
 
     drawCircumcircle() {
