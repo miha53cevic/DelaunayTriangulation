@@ -7,12 +7,10 @@ class Delunay_Triangulation {
         const p2 = new Point(HEIGHT / Math.tan(toRadian(45)) + WIDTH, HEIGHT);
         const p3 = new Point(0, Math.tan(toRadian(45)) * WIDTH * -1);
         this.super_triangle.createFromPoints(p1, p2, p3);
-        this.super_triangle.draw();
+        //this.super_triangle.draw();
     }
 
     RunAlgorithm(pointList) {
-        this.super_triangle.draw();
-
         // pointList is a set of coordinates defining the points to be triangulated
         // triangulation := empty triangle mesh data structure
         let triangulation = [];
@@ -63,7 +61,6 @@ class Delunay_Triangulation {
             }
 
             // Remove all bad triangles from triangulation
-            console.log(triangulation.filter(value => value.badTriangle));
             triangulation = triangulation.filter(value => !value.badTriangle);
 
             for (let edge of polygon) {
