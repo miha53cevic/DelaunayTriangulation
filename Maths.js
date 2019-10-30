@@ -234,7 +234,7 @@ class TriangleMesh {
         return okomica1.sjeciste(okomica2);
     }
 
-    // Formula za radius opisane kruznice
+    // Formula za radius opisane kruznice trokuta
     CircumcircleRadius() {
         const a = this.a.length;
         const b = this.b.length;
