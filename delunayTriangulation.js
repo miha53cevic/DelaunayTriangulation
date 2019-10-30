@@ -1,6 +1,7 @@
 class Delunay_Triangulation {
     constructor() {
         // Create the super triangle
+        // Super_Triangle je pravokutni i pravokutni dio trokuta se koristi kao mjesto za ekran
         this.super_triangle = new TriangleMesh();
         const p1 = new Point(0, HEIGHT);
         const p2 = new Point(HEIGHT / Math.tan(toRadian(45)) + WIDTH, HEIGHT);
